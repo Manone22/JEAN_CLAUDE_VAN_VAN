@@ -1,0 +1,14 @@
+<div class="container">
+    <h1><%= @van.name %></h1>
+    <p><%= @van.description %></p>
+    <p><%= @van.date %></p>
+    <p><%= @van.price %></p>
+    <p><%= @van.seat %></p>
+    <p><%= @van.location %></p>
+    <p><%= @van.image_url %></p>
+    <p><%= @van.user %></p>
+    <p><%= link_to "", van_path(van), class: 'card-link' %></p>
+    <% end %>
+</div>
+
+<%= link_to 'Retour', vans_path, class: 'btn btn-warning' %>

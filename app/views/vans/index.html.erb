@@ -1,0 +1,15 @@
+  <h1>JC vans </h1>
+  <p>Parce qu'il n'y aura plus de vans dans 50 ans</p>
+  <%= link_to "Choisit ton van", new_van_path, class: "btn btn-primary btn-lg" %>
+
+    <% @vans.each do |van| %>
+    <p><%= van.name %></p>
+    <p><%= van.description %></p>
+    <p><%= van.date %></p>
+    <p><%= van.price %></p>
+    <p><%= van.seat %></p>
+    <p><%= van.location %></p>
+    <p><%= van.image_url %></p>
+    <p><%= van.user %></p>
+    <p><%= link_to "", van_path(van), class: 'card-link' %></p>
+    <% end %>
