@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   background:#EBF2FF;
+  font-size: 18px ;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -8,6 +9,15 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 70px;
 }
 
+.jcvdlogo {
+ margin-left: -17px;
+ margin-bottom: -13px;
+}
+
+.jcvdslogan {
+  height: 40px;
+  border: 2px solid red;
+}
