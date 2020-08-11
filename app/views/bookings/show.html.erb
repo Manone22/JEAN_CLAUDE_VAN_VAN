@@ -37,5 +37,5 @@
   <%= @van.image_url %>
 </p>
 
-<%= link_to 'Annuler la location', van_path(@van), method: :delete, data: { confirm: 'Confirmer votre annulation?' } %>
+<%= link_to 'Annuler la location', booking_path(@booking), method: :delete, data: { confirm: 'Confirmer votre annulation?' } %>
 <%= link_to 'Retour', vans_path %>

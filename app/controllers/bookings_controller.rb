@@ -27,7 +27,7 @@ class BookingsController < ApplicationController
     @booking = booking.find(params[:id])
     @van = @booking.van
     @booking.destroy
-    redirect_to van_path(@van), notice: 'Votre booking a bien été supprimé!'
+    redirect_to booking_path(@booking), notice: 'Votre booking a bien été supprimé!'
   end
 
   private
