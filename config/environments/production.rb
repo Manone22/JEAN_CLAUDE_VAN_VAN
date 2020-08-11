@@ -2,6 +2,7 @@ Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
+  config.default_url_options = {host: 'https://jean-claude-van-van.herokuapp.com/'}
   config.cache_classes = true
 
   # Eager load code on boot. This eager loads most of Rails and
