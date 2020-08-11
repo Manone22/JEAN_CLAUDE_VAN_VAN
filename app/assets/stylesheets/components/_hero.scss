@@ -1,0 +1,19 @@
+.container {
+    text-align: center;
+}
+
+@media (min-width: 1000px) {
+    .banner {
+        background-size: cover;
+        background-position: center;
+        padding: 130px 130px 50px 130px;
+    }
+}
+
+
+@media (max-width: 1000px) {
+    .hero-img {
+    width: 247px;
+    }
+}
+  
