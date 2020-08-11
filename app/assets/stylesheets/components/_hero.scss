@@ -2,17 +2,18 @@
     text-align: center;
 }
 
-.banner {
-    background-size: cover;
-    background-position: center;
-    padding: 130px;
-    // height: 100vh;
+@media (min-width: 1000px) {
+    .banner {
+        background-size: cover;
+        background-position: center;
+        padding: 130px 130px 50px 130px;
+    }
 }
 
-.banner-img {
-    background-size: cover;
-    background-position: center;
-    margin-top:50px;
-    padding: 150px;
-}  
+
+@media (max-width: 1000px) {
+    .hero-img {
+    width: 247px;
+    }
+}
   
