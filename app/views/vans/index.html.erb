@@ -1,15 +1,39 @@
-  <h1>JC vans </h1>
-  <p>Parce qu'il n'y aura plus de vans dans 50 ans</p>
-  <%= link_to "Choisit ton van", new_van_path, class: "btn btn-primary btn-lg" %>
+<p id="notice"><%= notice %></p>
 
+<h1>JC Van Van</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Description</th>
+      <th>Place</th>
+      <th>Adresse</th>
+      <th>Disponibilité</th>
+      <th>Prix</th>
+      <th>Image</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
     <% @vans.each do |van| %>
-    <p><%= van.name %></p>
-    <p><%= van.description %></p>
-    <p><%= van.date %></p>
-    <p><%= van.price %></p>
-    <p><%= van.seat %></p>
-    <p><%= van.location %></p>
-    <p><%= van.image_url %></p>
-    <p><%= van.user %></p>
-    <p><%= link_to "", van_path(van), class: 'card-link' %></p>
+      <tr>
+        <td><%= van.name %></td>
+        <td><%= van.description %></td>
+        <td><%= van.seat %></td>
+        <td><%= van.location %></td>
+        <td><%= van.date %></td>
+        <td><%= van.price %></td>
+        <td><%= van.image_url %></td>
+        <td><%= link_to '', van %></td>
+        <td><%= link_to 'Modifier', edit_van_path(van) %></td>
+        <td><%= link_to 'Annuler', van, method: :delete, data: { confirm: 'Confirmer la supression' } %></td>
+      </tr>
     <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Louer mon Van', new_van_path %>

@@ -1,14 +1,41 @@
-<div class="container">
-    <h1><%= @van.name %></h1>
-    <p><%= @van.description %></p>
-    <p><%= @van.date %></p>
-    <p><%= @van.price %></p>
-    <p><%= @van.seat %></p>
-    <p><%= @van.location %></p>
-    <p><%= @van.image_url %></p>
-    <p><%= @van.user %></p>
-    <p><%= link_to "", van_path(van), class: 'card-link' %></p>
-    <% end %>
-</div>
+<p id="notice"><%= notice %></p>
 
-<%= link_to 'Retour', vans_path, class: 'btn btn-warning' %>
+<p>
+  <strong>Nom:</strong>
+  <%= @van.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @van.description %>
+</p>
+
+<p>
+  <strong>Place:</strong>
+  <%= @van.seat %>
+</p>
+
+<p>
+  <strong>Adresse:</strong>
+  <%= @van.location %>
+</p>
+
+<p>
+  <strong>Disponibilités:</strong>
+  <%= @van.date %>
+</p>
+
+<p>
+  <strong>Prix:</strong>
+  <%= @van.price %>
+</p>
+
+<p>
+  <strong>Photo:</strong>
+  <%= @van.image_url %>
+</p>
+
+<%= link_to 'Modifier mon van', edit_van_path(@van) %>
+<%= link_to 'Retour', vans_path %>
+
+<!-- link_to 'Ajouter un commentaire', new_van_review_path(@van)  -->
