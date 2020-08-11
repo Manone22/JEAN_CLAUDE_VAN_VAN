@@ -13,6 +13,9 @@
 
   <body>
     <%= yield %>
+    <%= link_to "logout", destroy_user_session_path, method: :delete %>
+    <%= link_to "Login", user_session_path, method: :delete %>
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
   </body>

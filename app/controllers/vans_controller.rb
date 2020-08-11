@@ -11,6 +11,7 @@ class VansController < ApplicationController
 
   def new
     @van = Van.new
+     authorize @van
   end
 
   def edit
@@ -18,6 +19,7 @@ class VansController < ApplicationController
 
   def create
     @van = Van.new(van_params)
+    authorize @van
     @van.user = current_user
     if @van.save!
       redirect_to @van, notice: 'Votre van a bien été enregistré!'
@@ -27,7 +29,6 @@ class VansController < ApplicationController
   end
 
   def update
-    authorize @van
     if @van.update(van_params)
       redirect_to @van, notice: 'Votre van a bien été modifié!'
     else
@@ -44,6 +45,7 @@ class VansController < ApplicationController
 
   def set_van
     @van = Van.find(params[:id])
+    authorize @van
   end
 
   def van_params
