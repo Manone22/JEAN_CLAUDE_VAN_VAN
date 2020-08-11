@@ -36,4 +36,6 @@
 
 <br>
 
-<%= link_to 'Louer mon Van', new_van_path %>
+<% if policy(Van).create? %>
+  <%= link_to 'Louer mon Van', new_van_path %>
+<% end %>

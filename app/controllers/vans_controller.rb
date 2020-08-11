@@ -3,7 +3,7 @@ class VansController < ApplicationController
   before_action :set_van, only: [:show, :edit, :update, :destroy]
 
   def index
-    @vans = Van.all
+    @vans = policy_scope(Van)
   end
 
   def show
@@ -27,6 +27,7 @@ class VansController < ApplicationController
   end
 
   def update
+    authorize @van
     if @van.update(van_params)
       redirect_to @van, notice: 'Votre van a bien été modifié!'
     else
