@@ -1,1 +1,27 @@
 // Specific CSS for your home-page
+body {
+background-color: #F0F1F9;
+font-family: 'Roboto', sans-serif;
+}
+
+body h1 {
+    color : #1C00E5;
+    text-shadow: 3px 3px 0px #51fdb3;
+    font-size: 50px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+
+body p {
+    font-size: 15px;
+    color: #1C0047;
+    opacity: 1;
+    font-family: 'Roboto-light', sans-serif;
+}
+
+body h3 {
+    font-size: 24px;
+    color: #1C00E5;
+    opacity: 1;
+    font-family: 'Roboto', sans-serif;
+}

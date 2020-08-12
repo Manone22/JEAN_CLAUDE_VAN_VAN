@@ -4,7 +4,6 @@
     <title>JEANClaudeVanVan</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
@@ -12,6 +11,7 @@
   </head>
 
   <body>
+    <%= render 'shared/navbar' %>
     <%= yield %>
     <%= link_to "logout", destroy_user_session_path, method: :delete %>
     <%= link_to "Login", new_user_session_path, method: :delete %>

@@ -2,6 +2,8 @@
 
 <h1>JC Van Van</h1>
 
+<p><%= link_to 'Louer mon Van', new_van_path %></p>
+
 <table>
   <thead>
     <tr>
@@ -27,17 +29,18 @@
         <td><%= van.date %></td>
         <td><%= van.price %></td>
         <td><%= van.image_url %></td>
+
         <td><%= van.user_id %></td>
         <td><%= link_to '', van %></td>
         <td><%= link_to 'Modifier', edit_van_path(van) %></td>
         <td><%= link_to 'Annuler', van, method: :delete, data: { confirm: 'Confirmer la supression' } %></td>
+
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
 <% if policy(Van).create? %>
   <%= link_to 'Louer mon Van', new_van_path %>
 <% end %>
+

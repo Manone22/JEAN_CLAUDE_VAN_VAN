@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<h1>Ton booking summary</h1>
+
 <p>
   <strong>Nom:</strong>
   <%= @van.name %>
@@ -35,14 +37,5 @@
   <%= @van.image_url %>
 </p>
 
-
-<% if current_user.nil? == false && current_user == @van.user %>
-<%= link_to 'Modifier mon van', edit_van_path(@van) %>
-<%= link_to 'Supprimer mon van', van_path(@van), method: :delete, data: { confirm: 'Confirmer la supression' } %>
-<%= link_to 'Booker ce van', new_van_booking_path(@van) %>
-<% end %>
-
-
+<%= link_to 'Annuler la location', van_path(@van), method: :delete, data: { confirm: 'Confirmer votre annulation?' } %>
 <%= link_to 'Retour', vans_path %>
-
-<!-- link_to 'Ajouter un commentaire', new_van_review_path(@van)  -->
