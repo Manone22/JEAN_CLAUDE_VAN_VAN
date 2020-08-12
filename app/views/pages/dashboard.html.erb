@@ -1,10 +1,12 @@
-<h1>My van(s)</h1>
+<h1>Mes vans</h1>
 <%= @vans.all%>
 
-<h1>My own bookings</h1>
+<h1>Mes réservations/h1>
 <%= @bookings.all %>
 
-<h1>All my van bookings'</h1>
+<h1>Tous mes bookings</h1>
+<% @vans.each do |van| %>
+<%= @vans.bookings %>
 <!-- rajouter ici le fait de pouvoir voir tous les bookings liés aux différents vans. -->
 
-<%= link_to 'Back to home page', root_path %>
+<%= link_to 'Retour', root_path %>
