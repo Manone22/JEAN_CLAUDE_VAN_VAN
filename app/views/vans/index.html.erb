@@ -2,7 +2,7 @@
 
 <h1>JC Van Van</h1>
 
-<p><%= link_to 'Louer mon Van', new_van_path %></p>
+<p><%= link_to 'Louer mon van', new_van_path %></p>
 
 <table>
   <thead>
@@ -10,8 +10,8 @@
       <th>Nom</th>
       <th>Description</th>
       <th>Place</th>
+      <th>Disponibilités</th>
       <th>Adresse</th>
-      <th>Disponibilité</th>
       <th>Prix</th>
       <th>Image</th>
       <th>Propriétaire</th>
@@ -25,8 +25,8 @@
         <td><%= van.name %></td>
         <td><%= van.description %></td>
         <td><%= van.seat %></td>
-        <td><%= van.location %></td>
         <td><%= van.date %></td>
+        <td><%= van.location %></td>
         <td><%= van.price %></td>
         <td><%= van.image_url %></td>
 
@@ -40,7 +40,7 @@
   </tbody>
 </table>
 
+<%= link_to 'Retour', root_path %>
 <% if policy(Van).create? %>
-  <%= link_to 'Louer mon Van', new_van_path %>
+  <%= link_to 'Réserver', new_van_path %>
 <% end %>
-
