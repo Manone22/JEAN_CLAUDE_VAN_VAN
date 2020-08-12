@@ -3,7 +3,7 @@ class VansController < ApplicationController
   before_action :set_van, only: [:show, :edit, :update, :destroy]
 
   def index
-    @vans = Van.all
+    @vans = policy_scope(Van)
   end
 
   def show
@@ -11,6 +11,7 @@ class VansController < ApplicationController
 
   def new
     @van = Van.new
+     authorize @van
   end
 
   def edit
@@ -18,6 +19,7 @@ class VansController < ApplicationController
 
   def create
     @van = Van.new(van_params)
+    authorize @van
     @van.user = current_user
     if @van.save!
       redirect_to @van, notice: 'Votre van a bien été enregistré!'
@@ -43,6 +45,7 @@ class VansController < ApplicationController
 
   def set_van
     @van = Van.find(params[:id])
+    authorize @van
   end
 
   def van_params
