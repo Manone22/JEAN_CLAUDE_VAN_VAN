@@ -10,17 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2020_08_11_102915) do
-=======
-
 ActiveRecord::Schema.define(version: 2020_08_10_161854) do
->>>>>>> 9de46a3879e2fdaba2817598061671f8e897d287
+
+
+ActiveRecord::Schema.define(version: 2020_08_11_105350) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-<<<<<<< HEAD
   create_table "bookings", force: :cascade do |t|
     t.date "date"
     t.integer "price"
@@ -32,7 +29,6 @@ ActiveRecord::Schema.define(version: 2020_08_10_161854) do
     t.index ["van_id"], name: "index_bookings_on_van_id"
   end
 
-=======
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -55,7 +51,7 @@ ActiveRecord::Schema.define(version: 2020_08_10_161854) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
->>>>>>> 9de46a3879e2fdaba2817598061671f8e897d287
+  
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -64,6 +60,7 @@ ActiveRecord::Schema.define(version: 2020_08_10_161854) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "admin"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -82,6 +79,7 @@ ActiveRecord::Schema.define(version: 2020_08_10_161854) do
     t.index ["user_id"], name: "index_vans_on_user_id"
   end
 
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bookings", "users"
   add_foreign_key "bookings", "vans"
   add_foreign_key "vans", "users"
