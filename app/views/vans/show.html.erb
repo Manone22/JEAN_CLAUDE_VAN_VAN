@@ -25,11 +25,6 @@
   <%= @van.price %>
 </p>
 
-<p>
-  <strong>Photos:</strong>
-  <%= @van.image_url %>
-</p>
-
 <%= link_to 'Modifier mon van', edit_van_path(@van) %>
 <% if @van.bookings == [] %>
 <%= link_to 'Supprimer mon van', van_path(@van), method: :delete, data: { confirm: 'Tu es certain de vouloir supprimer?' } %>
@@ -39,5 +34,7 @@
 <%= link_to 'Louer ce van', new_van_booking_path(@van) %>
 
 <%= link_to 'Retour', vans_path %>
+
+
 
 <!-- link_to 'Ajouter un commentaire', new_van_review_path(@van)  -->
