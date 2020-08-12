@@ -1,21 +1,46 @@
-<div class="navbar navbar-expand-md navbar-light navbar-lewagon">
-      <%= link_to "#", class: "navbar-brand" do %>
-        <%= image_tag "https://res.cloudinary.com/dj7ditlcu/image/upload/v1597150559/AIRBNB%20JCVD%20VAN/a5e19c44-99dc-4ebe-b323-d60fd2d199ae_200x200_1_deq6kr.png" %>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <%= link_to "#", class: "navbar-brand" do %>
+    <%= image_tag "https://res.cloudinary.com/dj7ditlcu/image/upload/v1597150559/AIRBNB%20JCVD%20VAN/a5e19c44-99dc-4ebe-b323-d60fd2d199ae_200x200_1_deq6kr.png" %>
+  <% end %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-items active">
+        <%= link_to "Business", "#", class: "nav-link" %>
+      </li>
+      <li class="nav-items">
+          <% if user_signed_in? %>
+            <%= current_user.email %>
+            <%= link_to 'Sign out', destroy_user_session_path, method: 'delete' %>
+          <% else %>
+        <%= link_to "Se connecter", new_user_session_path, class: "nav-link" %>
+            <div class="dropdown-menu dropdown-menu-right">
+            <%= link_to 'Sign up', new_user_registration_path %>
+            <%= link_to 'Sign in', new_user_session_path %>
+            </div>
+          <% end %>
+      </li>
+      <% if user_signed_in? %>
+      <li class="nav-rent">
+        <%= link_to "Louer mon van", "#", class: "nav-link" %>
+      </li>
       <% end %>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-items active">
-            <%= link_to "Business", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-items">
-            <%= link_to "Se connecter", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-rent">
-            <%= link_to "Louer mon van", "#", class: "nav-link" %>
-          </li>
-        </ul>
-      </div>
+
+      <% if user_signed_in? %>
+      <li class="nav-item dropdown">
+        <%= image_tag "https://i.pinimg.com/564x/5a/57/93/5a579367d1a284cd5976f246ff0d1ec0.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <%= link_to "Ajouter un van", "#", class: "dropdown-item" %>
+          <%= link_to "Reserver un van", "#", class: "dropdown-item" %>
+          <%= link_to "Modifier un van", "#", class: "dropdown-item" %>
+          <%= link_to "Supprimer un van", "#", class: "dropdown-item" %>
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+        </div>
+      </li>
+      <% end %>
+    </ul>
+  </div>
 </div>
+
