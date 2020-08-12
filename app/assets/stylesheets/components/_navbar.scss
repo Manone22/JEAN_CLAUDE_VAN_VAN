@@ -2,9 +2,8 @@
   width: 100%;
   justify-content: space-between;
   font-size: 20px ;
-  position: -webkit-sticky;
-  position: sticky;
   top: 0px;
+  z-index:100;
   background-color: #F0F1F9;
 }
 
@@ -28,7 +27,7 @@ a.nav-link:hover {
 
 .nav-items {
 border-radius: 15px 15px;
-text-shadow:2px 2px 0px #51fdb3;
+// text-shadow:2px 2px 0px #51fdb3;
 margin-right: 50px;
 font-family: 'Roboto', sans-serif;
 
