@@ -40,7 +40,5 @@
   </tbody>
 </table>
 
-<% if policy(Van).create? %>
-  <%= link_to 'Louer mon Van', new_van_path %>
-<% end %>
+<%= user_signed_in? %>
 
