@@ -17,7 +17,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.van = @van
     if @booking.save!
-      redirect_to booking_path(@booking), notice: 'Your booking was successfully confirmed!'
+      redirect_to booking_path(@booking), notice: 'Ton booking a bien été confirmé!'
     else
       render :new
     end
@@ -27,7 +27,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @van = @booking.van
     @booking.destroy
-    redirect_to van_path(@van), notice: 'Your booking was successfully cancelled!'
+    redirect_to van_path(@van), notice: 'Ton booking a bien été annulé!'
   end
 
   private

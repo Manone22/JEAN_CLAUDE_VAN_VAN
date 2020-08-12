@@ -20,7 +20,7 @@ class VansController < ApplicationController
     @van = Van.new(van_params)
     @van.user = current_user
     if @van.save!
-      redirect_to @van, notice: 'Your van was successfully created!'
+      redirect_to @van, notice: 'Ton van a bien été enregistré!'
     else
       render :new
     end
@@ -28,7 +28,7 @@ class VansController < ApplicationController
 
   def update
     if @van.update(van_params)
-      redirect_to @van, notice: 'Your van was successfully updated!'
+      redirect_to @van, notice: 'Ton van a bien été modifié!'
     else
       render :edit
     end
@@ -36,7 +36,7 @@ class VansController < ApplicationController
 
   def destroy
     @van.destroy
-    redirect_to vans_url, notice: 'Your van was successfully deleted!'# faire attention au niveau du delete s'il existe un booking.
+    redirect_to vans_url, notice: 'Ton van a bien été supprimé!'# faire attention au niveau du delete s'il existe un booking.
   end
 
   private
