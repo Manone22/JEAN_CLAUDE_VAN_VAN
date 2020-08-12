@@ -1,8 +1,4 @@
-<p id="notice"><%= notice %></p>
-
 <h1>JC Van Van</h1>
-
-<p><%= link_to 'Louer mon Van', new_van_path %></p>
 
 <table>
   <thead>
@@ -10,11 +6,10 @@
       <th>Nom</th>
       <th>Description</th>
       <th>Place</th>
+      <th>Disponibilités</th>
       <th>Adresse</th>
-      <th>Disponibilité</th>
       <th>Prix</th>
-      <th>Image</th>
-      <th>Propriétaire</th>
+      <th>Photo</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -25,20 +20,15 @@
         <td><%= van.name %></td>
         <td><%= van.description %></td>
         <td><%= van.seat %></td>
-        <td><%= van.location %></td>
         <td><%= van.date %></td>
+        <td><%= van.location %></td>
         <td><%= van.price %></td>
         <td><%= van.image_url %></td>
-
-        <td><%= van.user_id %></td>
-        <td><%= link_to '', van %></td>
-        <td><%= link_to 'Modifier', edit_van_path(van) %></td>
-        <td><%= link_to 'Annuler', van, method: :delete, data: { confirm: 'Confirmer la supression' } %></td>
-
+        <td><%= link_to 'Voir détails', van_path(van) %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= user_signed_in? %>
 
+<%= link_to 'Retour', root_path %>
