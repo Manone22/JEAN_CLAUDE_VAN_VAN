@@ -1,40 +1,27 @@
-<h1><%= @van.name %></h1>
+<div class="card-trip">
+  <%= link_to 'Modifier mon van', edit_van_path(@van) %>
+  <% if @van.bookings == [] %>
+  <%= link_to 'Supprimer mon van', van_path(@van), method: :delete, data: { confirm: 'Tu es certain de vouloir supprimer?' } %>
+  <% else %>
+  <p>You can't delete your van due to pending booking(s)</p>
+  <% end %>
+  <h1><%= @van.name %></h1>
+  <img src="<%= @van.image_url %>"/>
+  <div class="card-trip-infos">
+    <div>
+      <p>Description : <%= @van.description %></p>
+      <p>Lieu de location : <%= @van.location %></p>
+      <p>Places: <%= @van.seat %></p>
+      <p>Disponibilité: <%= @van.date %></p>
+    </div>
+    <h2 class="card-trip-pricing"><%= @van.price %>€/jour</h2>
+    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+  </div>
+</div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @van.description %>
-</p>
 
-<p>
-  <strong>Place:</strong>
-  <%= @van.seat %>
-</p>
-
-<p>
-  <strong>Adresse:</strong>
-  <%= @van.location %>
-</p>
-
-<p>
-  <strong>Disponibilités:</strong>
-  <%= @van.date %>
-</p>
-
-<p>
-  <strong>Prix:</strong>
-  <%= @van.price %>
-</p>
-
-<%= link_to 'Modifier mon van', edit_van_path(@van) %>
-<% if @van.bookings == [] %>
-<%= link_to 'Supprimer mon van', van_path(@van), method: :delete, data: { confirm: 'Tu es certain de vouloir supprimer?' } %>
-<% else %>
-<p>You can't delete your van due to pending booking(s)</p>
-<% end %>
 <%= link_to 'Louer ce van', new_van_booking_path(@van) %>
-
+<br>
 <%= link_to 'Retour', vans_path %>
-
-
 
 <!-- link_to 'Ajouter un commentaire', new_van_review_path(@van)  -->
