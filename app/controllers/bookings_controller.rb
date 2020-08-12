@@ -1,9 +1,13 @@
 class BookingsController < ApplicationController
-  #IMPORTANT TO NOTE: pas de "skip_before_action car je veux que la login session
-  #soit obligatoire lorsque le user effectue un booking"
-  before_action :set_van, only: [:new, :create]
-  before_action :set_booking, only: [:show, :destroy]
+  # IMPORTANT TO NOTE: pas de "skip_before_action car je veux que la login session
+  # soit obligatoire lorsque le user effectue un booking"
+  before_action :set_van, only: %i[new create]
+  before_action :set_booking, only: %i[show destroy]
   skip_after_action :verify_authorized # TO DO : remove ! (authorisation sur toutes les routes de bookings)
+
+  def index
+    @bookings = Booking.all
+  end
 
   def show
     @van = @booking.van
@@ -45,7 +49,7 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:date, :price, :van_id) #pas de besoin d'ajouter un user_id
-    #il est ajouté automatiquement dans la méthode create.
+    params.require(:booking).permit(:date, :price, :van_id) # pas de besoin d'ajouter un user_id
+    # il est ajouté automatiquement dans la méthode create.
   end
 end

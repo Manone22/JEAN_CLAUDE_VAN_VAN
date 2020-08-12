@@ -1,0 +1,29 @@
+.form-fields {
+    border-radius:5px;
+}
+
+.form-button {
+  margin:0px;
+  background-color:white;
+  background-color: #FFFFFF;
+  border: 2px solid #1C00E5;
+  height: 40px;
+  width: 250px;
+  text-align: center;
+  box-shadow: 4px 4px 0px #51fdb3;
+  transition: 0.3s;
+  &:hover {
+    cursor: pointer;
+    border: 3px solid #1C00E5;
+    box-shadow: 8px 8px 0px #1C00E5;
+    box-sizing: border-box;
+  }
+}
+
+.form-button-text {
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  color: #1C00E5;
+  text-transform: uppercase;
+  padding:0px;
+}
