@@ -2,7 +2,7 @@
 
 <h1>JC Van Van</h1>
 
-<p><%= link_to 'Louer mon Van', new_van_path %></p>
+<p><%= link_to 'Rent my van', new_van_path %></p>
 
 <table>
   <thead>
@@ -28,10 +28,10 @@
         <td><%= van.date %></td>
         <td><%= van.price %></td>
         <td><%= van.image_url %></td>
-        <td><%= link_to 'Voir détails', van_path(van) %></td>
+        <td><%= link_to 'See details', van_path(van) %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-
+<%= link_to 'Back to home page', root_path %>

@@ -1,7 +1,6 @@
-<p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Nom:</strong>
+  <strong>Name:</strong>
   <%= @van.name %>
 </p>
 
@@ -11,38 +10,38 @@
 </p>
 
 <p>
-  <strong>Place:</strong>
+  <strong>Seat:</strong>
   <%= @van.seat %>
 </p>
 
 <p>
-  <strong>Adresse:</strong>
+  <strong>Location:</strong>
   <%= @van.location %>
 </p>
 
 <p>
-  <strong>Disponibilités:</strong>
+  <strong>Date:</strong>
   <%= @van.date %>
 </p>
 
 <p>
-  <strong>Prix:</strong>
+  <strong>Price:</strong>
   <%= @van.price %>
 </p>
 
 <p>
-  <strong>Photo:</strong>
+  <strong>Photos:</strong>
   <%= @van.image_url %>
 </p>
 
-
-<% if current_user.nil? == false && current_user == @van.user %>
-<%= link_to 'Modifier mon van', edit_van_path(@van) %>
-<%= link_to 'Supprimer mon van', van_path(@van), method: :delete, data: { confirm: 'Confirmer la supression' } %>
-<%= link_to 'Booker ce van', new_van_booking_path(@van) %>
+<%= link_to 'Update my van', edit_van_path(@van) %>
+<% if @van.bookings == [] %>
+<%= link_to 'Delete my van', van_path(@van), method: :delete, data: { confirm: 'Are you sure?' } %>
+<% else %>
+<p>You can't delete your van due to pending booking(s)</p>
 <% end %>
+<%= link_to 'Book this van', new_van_booking_path(@van) %>
 
-
-<%= link_to 'Retour', vans_path %>
+<%= link_to 'Back', vans_path %>
 
 <!-- link_to 'Ajouter un commentaire', new_van_review_path(@van)  -->
