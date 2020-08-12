@@ -30,7 +30,4 @@ class VanPolicy < ApplicationPolicy
       scope.all
     end
   end
-
 end
-
-

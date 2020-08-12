@@ -1,20 +1,25 @@
-<h2>Log in</h2>
+<div class="container">
+  <h1>Let's roll again !</h1>
 
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: false,
-                autofocus: true,
-                input_html: { autocomplete: "email" } %>
-    <%= f.input :password,
-                required: false,
-                input_html: { autocomplete: "current-password" } %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+  <div class="container">
+  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="form-inputs">
+      <%= f.input :email,
+                  required: false,
+                  autofocus: true,
+                  input_html: { autocomplete: "email", class: "form-fields" } %>
+      <%= f.input :password,
+                  required: false,
+                  input_html: { autocomplete: "current-password", class: "form-fields" } %>
+      <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+    </div>
+
+    <div class="form-button">
+      <%= f.button :submit, "Log in", class: "form-button-text" %>
+    </div>
+  <% end %>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+  <div class="container">
+      <p>Don't have an account ? You can <%= render "devise/shared/links" %></p>
+    </div>
+</div>
