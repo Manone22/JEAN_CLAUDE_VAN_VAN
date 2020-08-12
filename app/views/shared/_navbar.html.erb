@@ -19,11 +19,12 @@
       <li class="nav-item dropdown">
         <%= image_tag "https://i.pinimg.com/564x/5a/57/93/5a579367d1a284cd5976f246ff0d1ec0.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <%= link_to "Dashboard", dashboard_path, class: "nav-link" %>
           <%= link_to "Ajouter un van", "#", class: "dropdown-item" %>
           <%= link_to "Reserver un van", "#", class: "dropdown-item" %>
           <%= link_to "Modifier un van", "#", class: "dropdown-item" %>
           <%= link_to "Supprimer un van", "#", class: "dropdown-item" %>
-          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+          <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
         </div>
       </li>
     </ul>

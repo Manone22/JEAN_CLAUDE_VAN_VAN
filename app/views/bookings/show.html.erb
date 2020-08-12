@@ -1,9 +1,9 @@
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%= notice %></p> -->
 
-<h1>Ton booking summary</h1>
+<h1>Your booking summary</h1>
 
 <p>
-  <strong>Nom:</strong>
+  <strong>Name:</strong>
   <%= @van.name %>
 </p>
 
@@ -18,7 +18,7 @@
 </p>
 
 <p>
-  <strong>Adresse:</strong>
+  <strong>Location:</strong>
   <%= @van.location %>
 </p>
 
@@ -33,9 +33,9 @@
 </p>
 
 <p>
-  <strong>Photo:</strong>
+  <strong>Photos:</strong>
   <%= @van.image_url %>
 </p>
 
-<%= link_to 'Annuler la location', van_path(@van), method: :delete, data: { confirm: 'Confirmer votre annulation?' } %>
-<%= link_to 'Retour', vans_path %>
+<%= link_to 'Cancel booking', booking_path(@booking), method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to 'Back', vans_path %>
