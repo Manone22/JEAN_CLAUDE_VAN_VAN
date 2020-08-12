@@ -4,6 +4,10 @@ margin:0;
 padding:0;
 }
 
+.body-container {
+  min-height: calc(100vh - 216px); // Full screen height minus navbar + footer height
+}
+
 body {
 background-color: #F0F1F9;
 font-family: 'Roboto', sans-serif;

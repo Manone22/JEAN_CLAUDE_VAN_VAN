@@ -6,7 +6,12 @@
     <a href="#"><i class="fab fa-twitter"></i></a>
     <a href="#"><i class="fab fa-linkedin"></i></a>
   </div>
+  <%= link_to "logout", destroy_user_session_path, method: :delete %>
+    <%= link_to "Login", new_user_session_path, method: :delete %>
+    <p> <%= current_user %></p>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
   <div class="footer-copyright">
-    <i class="fas fa-copyright"></i>JC VAN VAN 2020 - Tous droits réservés
+    <i class="fas fa-copyright"></i> JC VAN VAN 2020 - Tous droits réservés
   </div>
 </div>
