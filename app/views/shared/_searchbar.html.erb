@@ -1,13 +1,13 @@
 <div class="flex-row search-container">
     <div class="row col-6 search-row">
-    <input class="form-control" type="text" placeholder="Search" aria-label="Search">
     <!-- Search form -->
     <!-- Supposed to be the good syntax -->
     <%= form_tag vans_path, method: :get do %>
     <%= text_field_tag :query,
                        params[:query],
                        class: "form-control",
-                       placeholder: "Find a van" %>
+                       placeholder: "Find a location for van" %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
     <% end %>
     </div>
     <div class="row col-3 picker-row">

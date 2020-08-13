@@ -5,6 +5,11 @@ class VansController < ApplicationController
   def index
     @vans = policy_scope(Van)
     @vans = Van.near(params[:location])
+    if params[:query].present?
+      @vans = Van.where("location ILIKE ?", "%#{params[:query]}%")
+    else
+      @movies = Van.all
+    end
   end
 
   def show
