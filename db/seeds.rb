@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
 Van.create(seat: 5, name: "Vanlife1", description: "Super old school", date: Date.today - rand(100).years, price: 340, location:"Marseille", image_url: "https://unsplash.com/photos/w8CcH9Md4vE", user_id: 1)
 Van.create(seat: 5, name: "Vanlife2", description: "Van completement rose", date: Date.today - rand(100).years, price: 340, location:"Marseille", image_url: "https://unsplash.com/photos/w8CcH9Md4vE", user_id: 1)
 Van.create(seat: 5, name: "Vanlife3", description: "Le van de ta vie !!!", date: Date.today - rand(100).years, price: 340, location:"Marseille", image_url: "https://unsplash.com/photos/w8CcH9Md4vE", user_id: 1)

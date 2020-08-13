@@ -1,6 +1,6 @@
 class VansController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show, :new, :edit, :create, :update, :destroy]
-  before_action :set_van, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: %i[index show new edit create update destroy]
+  before_action :set_van, only: %i[show edit update destroy]
 
   def index
     @vans = policy_scope(Van)
@@ -11,7 +11,7 @@ class VansController < ApplicationController
 
   def new
     @van = Van.new
-     authorize @van
+    authorize @van
   end
 
   def edit
@@ -38,7 +38,7 @@ class VansController < ApplicationController
 
   def destroy
     @van.destroy
-    redirect_to vans_url, notice: 'Ton van a bien été supprimé!'# faire attention au niveau du delete s'il existe un booking.
+    redirect_to vans_url, notice: 'Ton van a bien été supprimé!' # faire attention au niveau du delete s'il existe un booking.
   end
 
   private

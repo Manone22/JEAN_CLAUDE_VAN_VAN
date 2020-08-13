@@ -1,7 +1,30 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding:25px;
+}
+
+.index-container {
+  display: flex;
+  flex-direction: row;
+  padding: 25px;
+}
+
+.filter-container {
+  
+}
+
+.cards-container {
+  text-align:left;
+}
+
 .card-trip {
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  min-height: 323px;
+  max-height: 323px;
 }
 
 .card-trip > img {
@@ -40,8 +63,8 @@
 
 .cards {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
 }
 
 // Smallest device
@@ -68,14 +91,14 @@
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
   .cards {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 2fr 2fr;
   }
 }
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
   .cards {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 2fr 2fr;
   }
 }
 
