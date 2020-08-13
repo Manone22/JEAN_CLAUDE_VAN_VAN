@@ -1,18 +1,14 @@
 class VanPolicy < ApplicationPolicy
   def index?
-    record.user == user
+    true
   end
 
   def show?
-    record.user == user
+    true
   end
 
   def create?
-    return true
-  end
-
-  def new?
-    create?
+    true
   end
 
   def update?
