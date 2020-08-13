@@ -3,7 +3,12 @@ class VansController < ApplicationController
   before_action :set_van, only: [:show, :edit, :update, :destroy]
 
   def index
-    @vans = policy_scope(Van)
+    @vans = policy_scope(Van.near(params[:location]))
+    if params[:seats].present?
+      @vans = @vans.with_seats(params[:seats])
+    else
+      @movies = Van.all
+    end
   end
 
   def show
