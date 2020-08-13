@@ -5,6 +5,9 @@
   top: 0px;
   z-index:100;
   background-color: #F0F1F9;
+  box-shadow:  5px 5px 10px #d8d9e0, 
+             -5px -5px 10px #ffffff;
+  padding: 0px 50px 0px 50px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -19,29 +22,59 @@
 
 a.nav-link {
   color: #1C00E5 !important;
-}
-
-a.nav-link:hover {
-  color: black !important;
+  padding: 0px;
 }
 
 .nav-items {
 border-radius: 15px 15px;
 margin-right: 50px;
 font-family: 'Roboto', sans-serif;
-
 }
 
 .nav-rent {
-border-radius: 15px 15px;
-color: #080708 ;
-margin-right: 50px;
-font-family: 'Roboto', sans-serif;
-box-shadow: 0 3px 3px 0 rgba(0,0,0,0.15);
-background-color: #51fdb3;
 text-decoration: none;
-
+  background-color:white;
+  background-color: #FFFFFF;
+  border: 2px solid #1C00E5;
+  height: 40px;
+  width: 180px;
+  text-align: center;
+  justify-content: center;
+  box-shadow: 4px 4px 0px #51fdb3;
+  transition: 0.3s;
+  margin: 0px 5px 0px 5px;
+  &:hover {
+    cursor: pointer;
+    border: 3px solid #1C00E5;
+    box-shadow: 8px 8px 0px #1C00E5;
+    box-sizing: border-box;
+  }
 }
+
+.nav-dashboard {
+  // border-radius: 15px 15px;
+  // color: #080708 ;
+  // margin-right: 50px;
+  // font-family: 'Roboto', sans-serif;
+  // box-shadow: 0 3px 3px 0 rgba(0,0,0,0.15);
+  // background-color: #51fdb3;
+  text-decoration: none;
+  margin: 0px 5px 0px 5px;
+    background-color:white;
+    background-color: #FFFFFF;
+    border: 2px solid #1C00E5;
+    height: 40px;
+    text-align: center;
+    justify-content: center;
+    box-shadow: 4px 4px 0px #51fdb3;
+    transition: 0.3s;
+    &:hover {
+      cursor: pointer;
+      border: 3px solid #1C00E5;
+      box-shadow: 8px 8px 0px #1C00E5;
+      box-sizing: border-box;
+    }
+  }
 
 .avatar {
 width: 40px;
@@ -49,4 +82,5 @@ border-radius: 50%;
 height: 40px;
 object-fit: cover;
 object-position: top;
+margin: 0px 0px 0px 25px;
 }
