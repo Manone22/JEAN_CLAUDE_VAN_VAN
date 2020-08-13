@@ -5,24 +5,24 @@
     <!-- Supposed to be the good syntax -->
     <%= form_tag vans_path, method: :get do %>
       <%= text_field_tag :location,
-                       params[:location],
-                       class: "form-control",
-                       placeholder: "La ville Aware de ton van ?" %>
+                         params[:location],
+                         class: "form-control",
+                         placeholder: "La ville Aware de ton van ?" %>
       <%= text_field_tag :seats,
-                       params[:seats],
-                       class: "form-control",
-                       placeholder: "Combien de Aware places ?" %>
+                         params[:seats],
+                         class: "form-control",
+                         placeholder: "Combien de Aware places ?" %>
       <%= text_field_tag :price,
-                       params[:price],
-                       class: "form-control",
-                       placeholder: "Et ton prix ?" %>
+                         params[:price],
+                         class: "form-control",
+                         placeholder: "Et ton prix ?" %>
       <%= submit_tag "Search", class: "btn btn-primary" %>
     <% end %>
     </div>
     <div class="row col-3 picker-row">
-
+    Row 2
     </div>
     <div class="row col-3 picker-row">
-
+    Row 3
     </div>
 </div>

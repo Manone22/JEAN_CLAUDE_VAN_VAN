@@ -3,7 +3,12 @@
   <h1>Liste des vans disponibles :</h1>
 
   <div class="index-container">
-    <div class="row cards-container">
+    <div class="row col-3">
+      <div class="container">
+      <h2>Filters to add</h2>
+      </div>
+    </div>
+    <div class="row col-6 cards-container">
       <div class="cards">
         <% @vans.each do |van| %>
           <%= link_to van_path(van) do %>
