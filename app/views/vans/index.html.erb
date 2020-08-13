@@ -1,31 +1,14 @@
-
-<div class="cards">
-  <% @vans.each do |van| %>
-    <div class="card-trip">
-      <img src="<%= van.image_url %>"/>
-      <div class="card-trip-infos">
-        <div>
-          <h2><%= van.name %></h2>
-          <p><%= van.description %></p>
-          <p><%= van.location %></p>
-          <p>Places: <%= van.seat %></p>
-          <!-- <p>Disponibilité: <%= van.date %></p> -->
-        </div>
-        <h2 class="card-trip-pricing"><%= van.price %>€/jour</h2>
-        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
-      </div>
-    </div>
-  <% end %>
-
 <%= render "shared/searchbar" %>
 <div class="main-container">
   <h1>Liste des vans disponibles :</h1>
+
   <div class="index-container">
     <div class="row col-3">
-    <div class="container">
-    <h2>Filters to add</h2>
+      <div class="container">
+      <h2>Filters to add</h2>
+      </div>
     </div>
-    </div>
+
     <div class="row cards-container">
       <div class="cards">
         <% @vans.each do |van| %>
@@ -40,8 +23,8 @@
                   <p>Places: <%= van.seat %></p>
                   <!-- <p>Disponibilité: <%= van.date %></p> -->
                 </div>
-                <h2 class="card-trip-pricing"><%= van.price %>€/jour</h2>
-                <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+                  <h2 class="card-trip-pricing"><%= van.price %>€/jour</h2>
+                  <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
               </div>
             </div>
           <% end %>
