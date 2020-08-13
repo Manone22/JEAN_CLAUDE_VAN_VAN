@@ -11,6 +11,7 @@ class VansController < ApplicationController
 
   def new
     @van = Van.new
+    authorize @van
   end
 
   def edit
