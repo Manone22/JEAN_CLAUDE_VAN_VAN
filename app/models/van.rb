@@ -1,7 +1,8 @@
 class Van < ApplicationRecord
   belongs_to :user
   has_many :bookings
-  validates :name, :description, :seat, :location, :date, :price, :image_url, presence: true
+  has_one_attached :photo
+  validates :name, :description, :seat, :location, :date, :price, :photo, presence: true
 
   geocoded_by :location
   after_validation :geocode, if: :will_save_change_to_location?
