@@ -70,10 +70,11 @@
   }
 }
 
-.cards {
+.cards-index {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 2fr;
   grid-gap: 20px;
+  text-align: left;
 }
 
 .cards-home {
@@ -84,7 +85,7 @@
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
-  .cards {
+  .cards-index {
     grid-template-columns: 1fr;
   }
   .cards-home {
@@ -105,7 +106,7 @@
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   .cards {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr 2fr;
   }
   .cards-home {
     grid-template-columns: 1fr 1fr 1fr;

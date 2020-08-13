@@ -1,6 +1,6 @@
 class VansController < ApplicationController
   skip_before_action :authenticate_user!
-  before_action :set_van, only: [:show, :edit, :update, :destroy]
+  before_action :set_van, only: %i[show edit update destroy]
 
   def index
     @vans = policy_scope(Van.near(params[:location]))
