@@ -1,6 +1,6 @@
 class VansController < ApplicationController
-  skip_before_action :authenticate_user!
-  before_action :set_van, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: %i[index show new edit create update destroy]
+  before_action :set_van, only: %i[show edit update destroy]
 
   def index
     @vans = policy_scope(Van)
@@ -11,6 +11,7 @@ class VansController < ApplicationController
 
   def new
     @van = Van.new
+    authorize @van
   end
 
   def edit
@@ -48,7 +49,7 @@ class VansController < ApplicationController
   end
 
   def van_params
-    params.require(:van).permit(:name, :category, :description, :seat, :location, :date, :price, :image_url) # pas de besoin d'ajouter un user_id
-    # il est ajoute automatiquement dans la methode create.
+    params.require(:van).permit(:name, :category, :description, :seat, :location, :date, :price, :image_url)#pas de besoin d'ajouter un user_id
+    # il est ajoute automatiquement dans la méthode create.
   end
 end

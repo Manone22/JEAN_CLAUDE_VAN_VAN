@@ -1,8 +1,8 @@
 class BookingsController < ApplicationController
   # IMPORTANT TO NOTE: pas de "skip_before_action car je veux que la login session
   # soit obligatoire lorsque le user effectue un booking"
-  before_action :set_van, only: [:new, :create]
-  before_action :set_booking, only: [:show, :destroy]
+  before_action :set_van, only: %i[new create]
+  before_action :set_booking, only: %i[show destroy]
   skip_after_action :verify_authorized # TO DO : remove ! (authorisation sur toutes les routes de bookings)
 
   def index
@@ -16,7 +16,7 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
-    authorize @booking
+    # authorize @booking
   end
 
   def create

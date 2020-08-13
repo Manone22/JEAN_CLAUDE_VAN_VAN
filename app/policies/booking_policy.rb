@@ -1,18 +1,18 @@
 class BookingPolicy < ApplicationPolicy
   def index?
-    true
+    record.user == user
   end
 
   def show?
-    true
+    record.user == user
   end
 
   def create?
-    true
+    record.user == user
   end
 
   def new?
-    true
+    record.user == user
   end
 
   def destroy?
