@@ -49,7 +49,7 @@ class VansController < ApplicationController
   end
 
   def van_params
-    params.require(:van).permit(:name, :description, :seat, :location, :date, :price, :image_url)#pas de besoin d'ajouter un user_id
-    #il est ajouté automatiquement dans la méthode create.
+    params.require(:van).permit(:name, :category, :description, :seat, :location, :date, :price, :image_url)#pas de besoin d'ajouter un user_id
+    # il est ajoute automatiquement dans la méthode create.
   end
 end

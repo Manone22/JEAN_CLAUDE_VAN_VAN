@@ -1,24 +1,18 @@
-<h1>JC Van Van</h1>
-
 <div class="cards">
-
-<% @vans.each do |van| %>
-<div class="card-trip">
-  <img src="<%= van.image_url %>"/>
-  <div class="card-trip-infos">
-    <div>
-      <h2><%= van.name %></h2>
-      <p>Description : <%= van.description %></p>
-      <p>Lieu de location : <%= van.location %></p>
-      <p>Places: <%= van.seat %></p>
-      <!-- <p>Disponibilité: <%= van.date %></p> -->
+  <% @vans.each do |van| %>
+    <div class="card-trip">
+      <img src="<%= van.image_url %>"/>
+      <div class="card-trip-infos">
+        <div>
+          <h2><%= van.name %></h2>
+          <p><%= van.description %></p>
+          <p><%= van.location %></p>
+          <p>Places: <%= van.seat %></p>
+          <!-- <p>Disponibilité: <%= van.date %></p> -->
+        </div>
+        <h2 class="card-trip-pricing"><%= van.price %>€/jour</h2>
+        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+      </div>
     </div>
-    <h2 class="card-trip-pricing"><%= van.price %>€/jour</h2>
-    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
-  </div>
-  <p><%= link_to 'Voir détails', van_path(van) %></p>
+  <% end %>
 </div>
-<% end %>
-</div>
-
-<%= link_to 'Retour', root_path %>
