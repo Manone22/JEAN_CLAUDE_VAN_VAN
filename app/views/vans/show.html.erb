@@ -1,30 +1,56 @@
-<div class="card-trip">
-  <%= link_to 'Modifier mon van', edit_van_path(@van) %>
-  <% if @van.bookings == [] %>
-  <%= link_to 'Supprimer mon van', van_path(@van), method: :delete, data: { confirm: 'Tu es certain de vouloir supprimer?' } %>
-  <% else %>
-  <p>You can't delete your van due to pending booking(s)</p>
-  <% end %>
+<div class="container align-items-start">
+
   <h1><%= @van.name %></h1>
+
+  <!-- Photo & principal information du véhicule -->
+
+  <div class="card-trip-show p-3 mb-3">
   <img src="<%= @van.image_url %>"/>
   <div class="card-trip-infos">
     <div>
-      <p>Catégorie : <%= @van.category %></p>
-      <p>Description du véhicule : <%= @van.description %></p>
-      <p>Lieu de location : <%= @van.location %></p>
-      <p>Places: <%= @van.seat %></p>
-      <p>Disponibilité: <%= @van.date %></p>
+      <p><%= @van.category %></p>
+      <p><%= @van.seat %> place(s)</p>
     </div>
     <h2 class="card-trip-pricing"><%= @van.price %>€/jour</h2>
-    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+  </div>
+  <%= link_to 'Louer ce van', new_van_booking_path(@van), class: "btn btn-primary w-100" %>
+</div>
+
+<!-- description du véhicule -->
+
+<div class="card-product p-3 mb-3">
+  <div class="card-product-infos">
+    <h2>Description du véhicule</h2>
+    <p><%= @van.description %></p>
   </div>
 </div>
 
+<!-- Adresse de départ et de retour -->
 
-<%= link_to 'Louer ce van', new_van_booking_path(@van) %>
-<br>
-<%= link_to 'Create new van', new_van_path %>
-<br>
-<%= link_to 'Retour', vans_path %>
+<div class="card-product p-3 mb-3">
+  <div class="card-product-infos">
+    <h2>Adresse de départ et de retour</h2>
+    <p> <%=@van.location %></p>
+  </div>
+</div>
 
-<!-- link_to 'Ajouter un commentaire', new_van_review_path(@van)  -->
+<!-- calendrier -->
+
+<div class="card-product p-3 mb-3">
+  <div class="card-product-infos">
+    <h2>Disponibilité</h2>
+    <p><%= @van.date %></p>
+  </div>
+</div>
+
+<!-- retour vers index -->
+<div class="return_button">
+  <%= link_to 'Retour', vans_path %>
+</div>
+
+
+<!-- IMPORTANT -->
+<!-- une fois l'étape du dessus terminé, il faudra changer le display:flex + text-align -->
+<!-- on doit changer le style du fichier CSS ie container car il y a eu des valeurs par défaut qui empêchent mes valeurs de s'appliquer  -->
+
+
