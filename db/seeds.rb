@@ -19,4 +19,4 @@ Van.create!(seat: 5, name: "Vanlife6", category: "4x4", description: "Van verdoy
 Van.create!(seat: 5, name: "Vanlife7", category: "camper", description: "Monster truck", date: Date.today - rand(100).years, price: 340, location: "Marseille", image_url: "https://res.cloudinary.com/pm-interview/image/upload/v1597153091/e-bulli-3_u1ivsv.jpg", user: User.first)
 Van.create!(seat: 5, name: "Vanlife8", category: "camper", description: "VAn VROOM VROOM", date: Date.today - rand(100).years, price: 340, location: "Marseille", image_url: "https://res.cloudinary.com/pm-interview/image/upload/v1597153091/e-bulli-3_u1ivsv.jpg", user: User.first)
 
-puts "Vans created !"
+puts "Vans created ! !"
