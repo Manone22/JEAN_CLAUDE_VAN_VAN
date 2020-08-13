@@ -4,7 +4,7 @@
 
   <!-- Photo & principal information du véhicule -->
 
-  <div class="card-trip p-3 mb-3">
+  <div class="card-trip-show p-3 mb-3">
   <img src="<%= @van.image_url %>"/>
   <div class="card-trip-infos">
     <div>
@@ -13,9 +13,7 @@
     </div>
     <h2 class="card-trip-pricing"><%= @van.price %>€/jour</h2>
   </div>
-   <div class="btn btn-primary w-100">
-    <%= link_to 'Louer ce van', new_van_booking_path(@van) %>
-    </div>
+  <%= link_to 'Louer ce van', new_van_booking_path(@van), class: "btn btn-primary w-100" %>
 </div>
 
 <!-- description du véhicule -->

@@ -37,6 +37,19 @@
   grid-gap: 16px;
 }
 
+.card-trip-show {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  height: 540px;
+  img {
+    height: 75%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {
