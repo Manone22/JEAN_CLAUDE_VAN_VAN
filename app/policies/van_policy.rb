@@ -1,14 +1,14 @@
 class VanPolicy < ApplicationPolicy
   def index?
-    record.user == user
+    true # possibilite pour n'importe quel user de voir la page index
   end
 
   def show?
-    record.user == user
+    true # possibilite pour n'importe quel user de voir la page show
   end
 
   def create?
-    return true
+    record.user == user
   end
 
   def new?
@@ -30,7 +30,4 @@ class VanPolicy < ApplicationPolicy
       scope.all
     end
   end
-
 end
-
-

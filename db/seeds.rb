@@ -13,3 +13,7 @@ Van.create(seat: 5, name: "Vanlife5", description: "WonderWovan", date: Date.tod
 Van.create(seat: 5, name: "Vanlife6", description: "Van verdoyant", date: Date.today - rand(100).years, price: 340, location:"Marseille", image_url: "https://unsplash.com/photos/w8CcH9Md4vE", user_id: 1)
 Van.create(seat: 5, name: "Vanlife7", description: "Monster truck", date: Date.today - rand(100).years, price: 340, location:"Marseille", image_url: "https://unsplash.com/photos/w8CcH9Md4vE", user_id: 1)
 Van.create(seat: 5, name: "Vanlife8", description: "VAn VROOM VROOM", date: Date.today - rand(100).years, price: 340, location:"Marseille", image_url: "https://unsplash.com/photos/w8CcH9Md4vE", user_id: 1)
+
+Van.create(category: 'Volkswagen')
+Van.create(category: 'Camper')
+Van.create(category: '4x4')
