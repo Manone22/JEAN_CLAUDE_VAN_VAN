@@ -1,7 +1,7 @@
 class Van < ApplicationRecord
   belongs_to :user
   has_many :bookings, dependent: :destroy
-  validates :name, :description, :seat, :location, :date, :price, :image_url, presence: true
+  validates :name, :description, :seat, :location, :start_date, :end_date, :price, :image_url, presence: true
 
     def unavailable_dates
       bookings.pluck(:start_date, :end_date).map do |range|
