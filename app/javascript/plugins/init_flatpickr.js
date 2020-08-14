@@ -34,6 +34,18 @@ const initFlatpickr = () => {
       });
     })
   };
+
+  // Flatpickr for vans#show
+  const availabilities = document.getElementById('availabilities');
+  if (availabilities) {
+    const unavailableDates = JSON.parse(document.querySelector('#van-booking-dates').dataset.unavailable)
+    flatpickr(availabilities, {
+        minDate: 'today',
+        disable: unavailableDates,
+        inline: true,
+        dateFormat: "Y-m-d"
+      });
+  }
 }
 
 
