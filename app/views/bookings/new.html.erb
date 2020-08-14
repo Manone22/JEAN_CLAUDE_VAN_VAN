@@ -1,17 +1,65 @@
-<h1>Ton booking</h1>
+<div class="container">
 
+  <h1>Ton booking summary</h1>
+
+  <p>
+  <strong>Name:</strong>
+  <%= @van.name %>
+</p>
+
+<p>
+  <strong>Photo:</strong>
+  <% if @van.photo.attached? %>
+  <%= cl_image_tag @van.photo.key %>
+  <% end %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @van.description %>
+</p>
+
+<p>
+  <strong>Place:</strong>
+  <%= @van.seat %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @van.location %>
+</p>
+
+<p>
+  <strong>Prix:</strong>
+  <%= @van.price %>
+</p>
+
+<p>
+  <strong>Disponibilités:</strong>
 <%= simple_form_for([@van, @booking]) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
   <div id="van-booking-dates" data-unavailable='<%= @van.unavailable_dates.to_json %>'></div>
   <div class="form-fields">
-     <%= f.input :start_date, as: :string, type: :text, input_html: { class: "flatpickr" } %>
-     <%= f.input :end_date, as: :string, type: :text, input_html: { class: "flatpickr" } %>
+     <%= f.input :start_date, :label => "Date de début", as: :string, type: :text, input_html: { class: "flatpickr" } %>
+     <%= f.input :end_date, :label => "Date de fin", as: :string, type: :text, input_html: { class: "flatpickr" } %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, "Valider", class: "btn-primary" %>
   </div>
 <% end %>
+</p>
 
-<%= link_to "Retour", vans_path %>
+
+<%= link_to 'Annuler la réservation', booking_path(@van), method: :delete, data: { confirm: 'Es-tu certain de vouloir annuler?' } %>
+
+<!-- retour vers index -->
+<div class="container">
+  <div class="title-card">
+    <h3 id="" class="van-title"><%= link_to "Retour", vans_path %></h3>
+  </div>
+</div>
+
+</div>
+
