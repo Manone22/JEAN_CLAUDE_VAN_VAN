@@ -3,27 +3,20 @@
   <h1>Liste des vans disponibles :</h1>
 
   <div class="index-container">
-    <div class="row col-3">
-      <div class="container">
-      <h2>Filters to add</h2>
-      </div>
-    </div>
-    <div class="row col-9">
+    <div class="row col-12">
       <div class="cards-index">
         <% @vans.each do |van| %>
           <%= link_to van_path(van) do %>
             <div class="card-trip">
-              <img src="<%= van.image_url %>"/>
+              <img src="<%= url_for(van.photo) %>"/>
               <div class="card-trip-infos">
                 <div>
                   <h2><%= van.name %></h2>
                   <p><%= van.description %></p>
-                  <p><%= van.location %></p>
-                  <p><%= van.seat %></p>
-                  <!-- <p>Disponibilité: <%= van.date %></p> -->
+                  <p><strong>Emplacement :</strong> <%= van.location %></p>
+                  <p><strong>Nombre de places :</strong> <%= van.seat %></p>
                 </div>
                   <h2 class="card-trip-pricing"><%= van.price %>€/jour</h2>
-                  <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
               </div>
             </div>
           <% end %>

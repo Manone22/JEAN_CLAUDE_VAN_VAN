@@ -1,3 +1,14 @@
+.simple_form {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-control-file {
+  // background-color:yellow;
+  justify-content: center;
+}
+
 .form-fields {
     border-radius:5px;
 }
@@ -21,6 +32,8 @@
 }
 
 .form-button-text {
+  background: none;
+  border:none;
   font-family: 'Roboto', sans-serif;
   font-size: 20px;
   color: #1C00E5;
