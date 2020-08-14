@@ -1,5 +1,3 @@
-<h1><%= @van.name %></h1>
-
 <!-- Photo & principal information du véhicule -->
   <div class="card-trip-show p-3 mb-3">
   <% if @van.photo.attached? %>
@@ -9,8 +7,9 @@
   <% end %>
     <div class="card-trip-infos">
       <div>
-        <p><%= @van.category %></p>
-        <p><%= @van.seat %> place(s)</p>
+        <h1><%= @van.name %></h1>
+        <p class="tag bg-primary"><%= @van.category %></p>
+        <p class="tag bg-danger"><%= @van.seat %> place(s)</p>
       </div>
       <h2 class="card-trip-pricing"><%= @van.price %>€/jour</h2>
     </div>
@@ -18,39 +17,48 @@
 
 <div class="container-fluid align-items-start">
   <div class="row">
+    <div class="col-8">
+      <div class="van-infos">
 
-    <div class="van-infos col-6">
-      <!-- description du véhicule -->
-      <div class="card-product p-3 mb-3">
-        <div class="card-product-infos">
-          <h2>Description du véhicule</h2>
-          <p><%= @van.description %></p>
-        </div>
-      </div>
-      <!-- Adresse de départ et de retour -->
-      <div class="card-product p-3 mb-3">
-        <div class="card-product-infos">
-          <h2>Adresse de départ et de retour</h2>
-          <p> <%=@van.location %></p>
+        <div class="card-product p-3 mb-3">
+          <!-- description du véhicule -->
+          <div class="card-product-infos">
+            <h2>Description du véhicule</h2>
+            <p><%= @van.description %></p>
+          </div>
+          <!-- adresse de départ et de retour -->
+          <div class="card-product-infos">
+            <h2>Adresse de départ et de retour</h2>
+            <p> <%=@van.location %></p>
+          </div>
         </div>
       </div>
     </div>
 
     <!-- calendrier -->
-    <div class="calendar col-6">
-      <div class="card-product p-3 mb-3">
-        <div class="card-product-infos">
-          <h2>Disponibilité</h2>
-          <p><%= @booking.start_date %></p>
-          <p><%= @booking.end_date %></p>
-          <h2>CALENDAR</h2>
-          <%= link_to 'Louer ce van', new_van_booking_path(@van), class: "btn btn-primary w-100" %>
+
+    <div class="col-4">
+      <div class="calendar">
+        <div class="card-product p-3 mb-3 sticky-top">
+          <div class="card-product-infos">
+            <h2>Disponiblités</h2>
+            <div id="van-booking-dates" data-unavailable='<%= @van.unavailable_dates.to_json %>'></div>
+              <input type="text" id="availabilities" class="d-none">
+            <%= link_to 'Réserver', new_van_booking_path(@van), class: "btn btn-primary w-100" %>
+          </div>
+
         </div>
       </div>
     </div>
+  </div>
 </div>
+
 <!-- retour vers index -->
-<%= link_to 'Retour', vans_path %>
+<div class="container">
+  <div class="title-card">
+    <h3 id="" class="van-title"><%= link_to "Retour", vans_path %></h3>
+  </div>
+</div>
 
 
 

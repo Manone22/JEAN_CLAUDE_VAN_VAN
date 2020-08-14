@@ -1,19 +1,20 @@
 <div class="bienvenue">
   <h1> Bienvenue sur ton tableau de bord </h1>
 </div>
-
 <div class="cards">
 <% @vans.each do |van| %>
   <div class="card-product">
-    <img src="<%= van.image_url %>" />
+    <% if van.photo.attached? %>
+      <%= cl_image_tag van.photo.key %>
+    <% end %>
     <div class="card-product-infos">
       <h2><%= van.name %></h2>
       <p><%= van.description %> <strong><%= van.price %> €</strong>.</p>
       <%= link_to "Modifier mon van",   edit_van_path(van) %>
     </div>
-  </div>
- <%  end  %>
+  <% end %>
 </div>
+
 
 <div class="container">
         <div class="title-card ">
@@ -26,27 +27,19 @@
 <div class="cards">
  <% @bookings.each do |booking| %>
   <div class="card-product">
-    <img src="<%= booking.van.image_url %>" />
+    <% if van.photo.attached? %>
+      <%= cl_image_tag van.photo.key %>
+    <% end %>
     <div class="card-product-infos">
       <h2><%= booking.start_date %></h2>
       <h2><%= booking.end_date %></h2>
     </div>
   </div>
- <%  end  %>
+ <% end %>
 </div>
 
-
 <div class="container">
-        <div class="title-card">
-            <h3 id="" class="van-title"><%= link_to "Retour accueil", root_path %></h3>
-        </div>
-      </div>
-
-
-
-<!-- modifs romain -->
-
-
-<!-- @user = current_user
-@vans = current_user.vans
-@bookings = current_user.bookings -->
+  <div class="title-card">
+      <h3 id="" class="van-title"><%= link_to "Retour accueil", root_path %></h3>
+  </div>
+</div>
