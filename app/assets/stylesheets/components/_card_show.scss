@@ -1,3 +1,10 @@
+.calendar {
+  .card-product {
+    height: 100%;
+
+  }
+}
+
 .card-product {
   overflow: hidden;
   height: 120px;
@@ -9,13 +16,16 @@
 }
 
 .card-product h2 {
-  font-size: 16px;
-  font-weight: bold;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 700 bold;
   margin: 0;
+  color: #757575;
+  text-transform: uppercase;
 }
 
 .card-product p {
-  font-size: 12px;
+  font-size: 10px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
@@ -24,6 +34,7 @@
 
 .card-product .card-product-infos {
   padding: 16px;
+  border-radius: 10px;
 }
 
 .cards {
@@ -38,7 +49,7 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   height: 540px;
   img {
-    height: 75%;
+    height: 70%;
     width: 100%;
     object-fit: cover;
   }

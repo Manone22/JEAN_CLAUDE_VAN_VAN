@@ -1,5 +1,3 @@
-<h1><%= @van.name %></h1>
-
 <!-- Photo & principal information du véhicule -->
   <div class="card-trip-show p-3 mb-3">
   <% if @van.photo.attached? %>
@@ -9,6 +7,7 @@
   <% end %>
     <div class="card-trip-infos">
       <div>
+        <h1><%= @van.name %></h1>
         <p><%= @van.category %></p>
         <p><%= @van.seat %> place(s)</p>
       </div>
@@ -18,36 +17,42 @@
 
 <div class="container-fluid align-items-start">
   <div class="row">
-
-    <div class="van-infos col-6">
-      <!-- description du véhicule -->
-      <div class="card-product p-3 mb-3">
-        <div class="card-product-infos">
-          <h2>Description du véhicule</h2>
-          <p><%= @van.description %></p>
-        </div>
-      </div>
-      <!-- Adresse de départ et de retour -->
-      <div class="card-product p-3 mb-3">
-        <div class="card-product-infos">
-          <h2>Adresse de départ et de retour</h2>
-          <p> <%=@van.location %></p>
+    <div class="col-8">
+      <div class="van-infos">
+        <!-- description du véhicule -->
+        <div class="card-product p-3 mb-3">
+          <div class="card-product-infos">
+            <h2>Description du véhicule</h2>
+            <p><%= @van.description %></p>
+            <h2>Adresse de départ et de retour</h2>
+            <p> <%=@van.location %></p>
+          </div>
         </div>
       </div>
     </div>
 
     <!-- calendrier -->
-    <div class="calendar col-6">
-      <div class="card-product p-3 mb-3">
-        <div class="card-product-infos">
-          <h2>CALENDAR</h2>
-          <%= link_to 'Louer ce van', new_van_booking_path(@van), class: "btn btn-primary w-100" %>
+    <div class="col-4">
+      <div class="calendar">
+        <div class="card-product p-3 mb-3 sticky-top">
+          <div class="card-product-infos">
+            <h2>Disponiblités</h2>
+            <div id="van-booking-dates" data-unavailable='<%= @van.unavailable_dates.to_json %>'></div>
+              <input type="text" id="availabilities" class="d-none">
+            <%= link_to 'Réserver', new_van_booking_path(@van), class: "btn btn-primary w-100" %>
+          </div>
         </div>
       </div>
     </div>
+  </div>
 </div>
+
 <!-- retour vers index -->
-<%= link_to 'Retour', vans_path %>
+<div class="container">
+  <div class="title-card">
+    <h3 id="" class="van-title"><%= link_to "Retour", vans_path %></h3>
+  </div>
+</div>
 
 
 
