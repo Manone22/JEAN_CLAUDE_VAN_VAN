@@ -3,19 +3,37 @@
   <%= simple_form_for(@van) do |f| %>
     <%= f.error_notification %>
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :category %>
-    <%= f.input :description %>
-    <%= f.input :seat %>
-    <%= f.input :location %>
-    <%= f.input :price %>
-    <%= f.input :photo, as: :file %>
-  </div>
-
-    <div class="form-button">
-      <%= f.button :submit, class: "btn btn-primary" %>
-    </div>
-  <% end %>
+      <div class="d-flex flew-row justify-content-center">
+        <div class="form-inputs d-flex flex-column col-4">
+          <div class="p-1">
+            <%= f.input :name %>
+          </div>
+          <div class="p-1">
+            <%= f.input :category %>
+          </div>
+          <div class="p-1">
+            <%= f.input :description %>
+          </div>
+        </div>
+        <div class="form-inputs d-flex flex-column col-4">
+          <% # <div class=""> %>
+            <div class="p-1">
+              <%= f.input :location %>
+            </div>
+            <div class="p-1">
+              <%= f.input :seat %>
+            </div>
+            <div class="p-1">
+              <%= f.input :price %>
+            </div>
+          <% # </div> %>
+        </div>
+      </div>
+      <div class="row p-2">
+            <%= f.input :photo, as: :file %>
+          </div>
+      <div class="form-button">
+        <%= f.submit "Créer le van", class: "form-button-text" %>
+      </div>
+    <% end %>
 </div>
