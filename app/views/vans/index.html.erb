@@ -13,7 +13,9 @@
         <% @vans.each do |van| %>
           <%= link_to van_path(van) do %>
             <div class="card-trip">
-              <img src="<%= van.image_url %>"/>
+              <% if van.photo.attached? %>
+                <%= cl_image_tag van.photo.key %>
+              <% end %>
               <div class="card-trip-infos">
                 <div>
                   <h2><%= van.name %></h2>
