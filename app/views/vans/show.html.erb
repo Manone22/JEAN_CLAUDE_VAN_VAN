@@ -2,7 +2,11 @@
 
 <!-- Photo & principal information du véhicule -->
   <div class="card-trip-show p-3 mb-3">
-  <img src="<%= @van.image_url %>"/>
+  <% if @van.photo.attached? %>
+    <%= cl_image_tag @van.photo.key, height: 300, width: 400, crop: :fill %>
+  <% else %>
+    <%#= image_tag "image.jpg" %>
+  <% end %>
     <div class="card-trip-infos">
       <div>
         <p><%= @van.category %></p>
