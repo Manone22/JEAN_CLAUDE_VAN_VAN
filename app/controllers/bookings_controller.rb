@@ -49,7 +49,7 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:date, :price, :van_id) # pas de besoin d'ajouter un user_id
+    params.require(:booking).permit(:start_date, :end_date, :price, :van_id) # pas de besoin d'ajouter un user_id
     # il est ajouté automatiquement dans la méthode create.
   end
 end
