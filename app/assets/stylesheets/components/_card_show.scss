@@ -43,6 +43,11 @@
   margin-top: 8px;
 }
 
+.card-product-infos p {
+  text-align: center
+
+}
+
 .card-product .card-product-infos {
   padding: 16px;
   border-radius: 10px;
@@ -65,6 +70,7 @@
     object-fit: cover;
   }
 }
+
 
 
 // Smallest device
