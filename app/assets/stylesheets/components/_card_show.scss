@@ -63,14 +63,22 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  height: 540px;
+  height: 400px;
   img {
-    height: 70%;
+    height: 75%;
     width: 100%;
     object-fit: cover;
   }
 }
 
+.card-trip-pricing {
+  font-size: 30px;
+  line-height: 24px;
+  font-weight: 700 bold;
+  margin: 0;
+  color: #2A43E5;
+  text-transform: uppercase;
+}
 
 
 // Smallest device
