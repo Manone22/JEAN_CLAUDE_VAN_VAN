@@ -1,13 +1,18 @@
+.van-infos {
+  .card-product {
+    height: 420px;
+  }
+}
+
 .calendar {
   .card-product {
     height: 100%;
-
   }
 }
 
 .card-product {
   overflow: hidden;
-  height: 120px;
+  height: 100px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
@@ -16,7 +21,7 @@
 }
 
 .card-product h2 {
-  font-size: 14px;
+  font-size: 20px;
   line-height: 24px;
   font-weight: 700 bold;
   margin: 0;
@@ -25,8 +30,9 @@
 }
 
 .card-product p {
-  font-size: 10px;
-  line-height: 1.4;
+  font-size: 15px;
+  line-height: 1.5;
+  font-weight: 400;
   opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
