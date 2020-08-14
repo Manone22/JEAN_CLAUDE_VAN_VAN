@@ -1,6 +1,6 @@
 <p> Bienvenue sur ton tableau de bord <strong> <%= @user.email %></strong> !</p>
 
-   <%= link_to "Rajoutes ton van", new_van_path %>
+   <%= link_to "Rajouter un van", new_van_path %>
 <h2>Tes vans</h2>
 
 
@@ -11,7 +11,7 @@
     <div class="card-product-infos">
       <h2><%= van.name %></h2>
       <p><%= van.description %> <strong><%= van.price %> €</strong>.</p>
-      <%= link_to "modifier mon van",   edit_van_path(van) %>
+      <%= link_to "Modifier mon van",   edit_van_path(van) %>
     </div>
   </div>
  <%  end  %>
