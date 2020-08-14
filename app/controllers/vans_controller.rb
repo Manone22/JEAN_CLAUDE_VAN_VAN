@@ -1,9 +1,14 @@
 class VansController < ApplicationController
   skip_before_action :authenticate_user!
-  before_action :set_van, only: [:show, :edit, :update, :destroy]
+  before_action :set_van, only: %i[show edit update destroy]
 
   def index
-    @vans = policy_scope(Van)
+    @vans = policy_scope(Van.near(params[:location]))
+    if params[:seats].present?
+      @vans = @vans.with_seats(params[:seats])
+    else
+      @movies = Van.all
+    end
   end
 
   def show

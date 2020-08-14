@@ -12,11 +12,19 @@
 }
 
 .filter-container {
-  
+
 }
 
-.cards-container {
-  text-align:left;
+.card-container-home {
+  background-image: url('https://res.cloudinary.com/pm-interview/image/upload/v1597143374/card_background.svg');
+  display:flex;
+  flex-direction: column;
+  text-align:center;
+  margin: 0;
+  margin-bottom: 0px;
+  font-size: 32px;
+  font-weight: bold;
+  padding: 20px 20px 10px 20px;
 }
 
 .card-trip {
@@ -46,30 +54,41 @@
 }
 
 
-.card-trip .card-trip-infos {
-  padding: 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  position: relative;
+.card-trip, .card-trip-show {
+   .card-trip-infos {
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: relative;
+  }
+  .card-trip-user {
+    position: absolute;
+    right: 16px;
+    top: -20px;
+    width: 40px;
+  }
 }
 
-.card-trip-infos .card-trip-user {
-  position: absolute;
-  right: 16px;
-  top: -20px;
-  width: 40px;
-}
-
-.cards {
+.cards-index {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 2fr;
+  grid-gap: 20px;
+  text-align: left;
+}
+
+.cards-home {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 20px;
 }
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
-  .cards {
+  .cards-index {
+    grid-template-columns: 1fr;
+  }
+  .cards-home {
     grid-template-columns: 1fr;
   }
 }
@@ -79,12 +98,18 @@
   .cards {
     grid-template-columns: 1fr;
   }
+  .cards-home {
+    grid-template-columns: 1fr;
+  }
 }
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   .cards {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr 2fr;
+  }
+  .cards-home {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
@@ -93,12 +118,18 @@
   .cards {
     grid-template-columns: 2fr 2fr;
   }
+  .cards-home {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
   .cards {
     grid-template-columns: 2fr 2fr;
+  }
+  .cards-home {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
