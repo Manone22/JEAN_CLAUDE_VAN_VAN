@@ -2,9 +2,11 @@ import flatpickr from "flatpickr";
 import 'flatpickr/dist/flatpickr.css';
 
 const initFlatpickr = () => {
-  // const flatElements = document.querySelectorAll('.flatpickr');
-  // flatpickr(flatElements, {});
+  // Flatpickr for index
+  const flatElements = document.querySelectorAll('.search-flatpickr');
+  flatpickr(flatElements, {});
 
+  // Flatpickr for bookings#new
   // First we define two variables that are going to grab our inputs field. You can check the ids of the inputs with the Chrome inspector.
   const startDateInput = document.getElementById('booking_start_date');
   const endDateInput = document.getElementById('booking_end_date');

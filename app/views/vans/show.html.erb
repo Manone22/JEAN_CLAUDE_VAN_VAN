@@ -8,8 +8,8 @@
     <div class="card-trip-infos">
       <div>
         <h1><%= @van.name %></h1>
-        <p><%= @van.category %></p>
-        <p><%= @van.seat %> place(s)</p>
+        <p class="tag bg-primary"><%= @van.category %></p>
+        <p class="tag bg-danger"><%= @van.seat %> place(s)</p>
       </div>
       <h2 class="card-trip-pricing"><%= @van.price %>€/jour</h2>
     </div>
@@ -19,11 +19,15 @@
   <div class="row">
     <div class="col-8">
       <div class="van-infos">
-        <!-- description du véhicule -->
+
         <div class="card-product p-3 mb-3">
+          <!-- description du véhicule -->
           <div class="card-product-infos">
             <h2>Description du véhicule</h2>
             <p><%= @van.description %></p>
+          </div>
+          <!-- adresse de départ et de retour -->
+          <div class="card-product-infos">
             <h2>Adresse de départ et de retour</h2>
             <p> <%=@van.location %></p>
           </div>
