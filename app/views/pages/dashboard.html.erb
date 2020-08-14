@@ -1,29 +1,35 @@
-<div class="bienvenue">
-  <h1> Bienvenue sur ton tableau de bord </h1>
-  <h2>Tes vans</h2>
+<div class="container">
+  <h1>Voici tes vans :</h1>
 </div>
-<div class="cards">
-<% @vans.each do |van| %>
-  <div class="card-product">
-    <% if van.photo.attached? %>
-      <%= cl_image_tag van.photo.key %>
-    <% end %>
-    <div class="card-product-infos">
-      <h2><%= van.name %></h2>
-      <p><%= van.description %> <strong><%= van.price %> €</strong>.</p>
-      <%= link_to "Modifier mon van",   edit_van_path(van) %>
+
+<div class="index-container">
+  <div class="row col-12">
+    <div class="cards-index">
+      <% @vans.each do |van| %>
+        <div class="card-trip">
+          <% if van.photo.attached? %>
+            <%= cl_image_tag van.photo.key %>
+          <% end %>
+          <div class="card-product-infos">
+            <h2><%= van.name %></h2>
+            <p>Description <%= van.description %></p>
+            <p><strong><%= van.price %> €</strong>.</p>
+            <%= link_to "Modifier mon van", edit_van_path(van) %>
+          </div>
+        </div>
+      <% end %>
     </div>
-  <% end %>
+  </div>
 </div>
 
 
 <div class="container">
-        <div class="title-card ">
-            <h4 id="" class="Add-van"><%= link_to "Rajouter un van", new_van_path %></h4>
-        </div>
-      </div>
+  <div class="title-card ">
+      <h4 id="" class="Add-van"><%= link_to "Rajouter un van", new_van_path %></h4>
+  </div>
+</div>
 
-<h2 class="text-title">Tes réservations</h2>
+<h2 class="text-title">Prochaines réservations</h2>
 
 <div class="cards">
  <% @bookings.each do |booking| %>

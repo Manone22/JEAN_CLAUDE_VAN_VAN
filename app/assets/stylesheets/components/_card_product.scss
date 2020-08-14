@@ -1,8 +1,13 @@
+.container-dashboard {
+  display:flex;
+  flex-direction:row;
+}
+
 .card-product {
   overflow: hidden;
   height: 120px;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(214, 205, 205, 0.2);
   display: flex;
   align-items: center;
 }
