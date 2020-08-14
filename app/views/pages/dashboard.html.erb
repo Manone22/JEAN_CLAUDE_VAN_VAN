@@ -1,6 +1,5 @@
 <p> Bienvenue sur ton tableau de bord <strong> <%= @user.email %></strong> !</p>
 
-   <%= link_to "Rajouter un van", new_van_path %>
 <h2>Tes vans</h2>
 
 
@@ -17,6 +16,11 @@
  <%  end  %>
 </div>
 
+<div class="container">
+        <div class="title-card ">
+            <h4 id="" class="Add-van"><%= link_to "Rajouter un van", new_van_path %></h4>
+        </div>
+      </div>
 
 <h2>Tes réservations</h2>
 
