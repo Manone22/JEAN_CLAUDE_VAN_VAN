@@ -5,7 +5,7 @@
   <% if @van.photo.attached? %>
     <%= cl_image_tag @van.photo.key, height: 300, width: 400, crop: :fill %>
   <% else %>
-    <%#= image_tag "photo-bidon.jpg" %>
+    <%#= image_tag "image.jpg" %>
   <% end %>
     <div class="card-trip-infos">
       <div>
