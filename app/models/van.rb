@@ -1,6 +1,6 @@
 class Van < ApplicationRecord
   belongs_to :user
-  has_many :bookings
+  has_many :bookings, dependent: :destroy
   validates :name, :description, :seat, :location, :date, :price, :image_url, presence: true
 
   geocoded_by :location
