@@ -12,11 +12,11 @@
                      placeholder: "Nombre de places") %>
       <%= text_field_tag :start_date,
                          params[:start_date],
-                         class: "form-control flatpickr",
+                         class: "form-control search-flatpickr",
                          placeholder: "Début de location" %>
       <%= text_field_tag :end_date,
                          params[:end_date],
-                         class: "form-control flatpickr",
+                         class: "form-control search-flatpickr",
                          placeholder: "Fin de location" %>
       <%= submit_tag "Trouver un van", class: "form-button" %>
     <% end %>
