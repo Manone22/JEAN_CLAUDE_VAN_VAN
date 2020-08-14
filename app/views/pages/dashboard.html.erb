@@ -1,7 +1,6 @@
-<p> Bienvenue sur ton tableau de bord <strong> <%= @user.email %></strong> !</p>
-
-<h2>Tes vans</h2>
-
+<div class="bienvenue">
+  <h1> Bienvenue sur ton tableau de bord </h1>
+</div>
 
 <div class="cards">
 <% @vans.each do |van| %>
@@ -22,7 +21,7 @@
         </div>
       </div>
 
-<h2>Tes réservations</h2>
+<h2 class="text-title">Tes réservations</h2>
 
 <div class="cards">
  <% @bookings.each do |booking| %>

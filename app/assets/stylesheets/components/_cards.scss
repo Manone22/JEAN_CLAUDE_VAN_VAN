@@ -107,6 +107,7 @@
 }
 
 .title-card a {
+  color: #1C00E5;
   text-decoration:none;
   font-family: 'Roboto', sans-serif;
   font-size: 18px;
@@ -119,6 +120,12 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 16px;
   }
+
+.bienvenue {
+  text-decoration:none;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+}
 
   // Smallest device
   @media (min-width: 100px) and (max-width: 575px) {
