@@ -2,7 +2,7 @@ class Van < ApplicationRecord
   belongs_to :user
   has_many :bookings
   has_one_attached :photo
-  validates :name, :description, :seat, :location, :start_date, :end_date, :price, :photo, presence: true
+  validates :name, :description, :seat, :location, :price, :photo, presence: true
 
     def unavailable_dates
       bookings.pluck(:start_date, :end_date).map do |range|
