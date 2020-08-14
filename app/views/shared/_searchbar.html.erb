@@ -3,7 +3,7 @@
 
     <!-- Search form -->
     <!-- Supposed to be the good syntax -->
-    <%= form_tag vans_path, method: :get do %>
+    <%= form_tag vans_path, method: :get, class: "d-flex" do %>
       <%= text_field_tag :location,
                          params[:location],
                          class: "form-control",
@@ -12,15 +12,18 @@
                          params[:seats],
                          class: "form-control",
                          placeholder: "Combien de Aware places ?" %>
-      <%= text_field_tag :price,
-                         params[:price],
-                         class: "form-control",
-                         placeholder: "Et ton prix ?" %>
+      <%= text_field_tag :start_date,
+                         params[:start_date],
+                         class: "form-control flatpickr",
+                         placeholder: "Start" %>
+      <%= text_field_tag :end_date,
+                         params[:end_date],
+                         class: "form-control flatpickr",
+                         placeholder: "End" %>
       <%= submit_tag "Search", class: "btn btn-primary" %>
     <% end %>
     </div>
     <div class="row col-3 picker-row">
-    Row 2
     </div>
     <div class="row col-3 picker-row">
     Row 3

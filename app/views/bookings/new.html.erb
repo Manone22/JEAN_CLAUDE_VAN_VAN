@@ -5,7 +5,8 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
-    <%= f.input :date %>
+     <%= f.input :start_date, as: :string, type: :text, input_html: {class: 'flatpickr'} %>
+     <%= f.input :end_date, as: :string, type: :text, input_html: {class: 'flatpickr'} %>
   </div>
 
   <div class="form-actions">

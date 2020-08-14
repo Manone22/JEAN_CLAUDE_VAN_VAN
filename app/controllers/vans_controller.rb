@@ -1,6 +1,6 @@
 class VansController < ApplicationController
   skip_before_action :authenticate_user!
-  before_action :set_van, only: [:show, :edit, :update, :destroy]
+  before_action :set_van, only: %i[show edit update destroy]
 
   def index
     @vans = policy_scope(Van.near(params[:location]))
@@ -54,7 +54,7 @@ class VansController < ApplicationController
   end
 
   def van_params
-    params.require(:van).permit(:name, :category, :description, :seat, :location, :date, :price, :photo) # pas de besoin d'ajouter un user_id
+    params.require(:van).permit(:name, :category, :description, :seat, :location, :start_date, :end_date, :price, :photo) # pas de besoin d'ajouter un user_id
     # il est ajoute automatiquement dans la methode create.
   end
 end

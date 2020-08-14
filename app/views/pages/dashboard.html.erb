@@ -1,12 +1,52 @@
-<h1>Mes vans</h1>
-<%= @vans.all %>
+<p> Bienvenue sur ton tableau de bord <strong> <%= @user.email %></strong> !</p>
 
-<h1>Mes réservations/h1>
-<%= @bookings.index %>
+   <%= link_to "Rajouter un van", new_van_path %>
+<h2>Tes vans</h2>
 
-<h1>Toutes mes réservations de vans</h1>
+
+<div class="cards">
 <% @vans.each do |van| %>
-<%= van.bookings %>
-<!-- rajouter ici le fait de pouvoir voir tous les bookings liés aux différents vans. -->
-<% end %>
-<%= link_to "Retour", root_path %>
+  <div class="card-product">
+    <img src="<%= van.image_url %>" />
+    <div class="card-product-infos">
+      <h2><%= van.name %></h2>
+      <p><%= van.description %> <strong><%= van.price %> €</strong>.</p>
+      <%= link_to "Modifier mon van",   edit_van_path(van) %>
+    </div>
+  </div>
+ <%  end  %>
+</div>
+
+
+
+
+
+
+<h2>Tes réservations</h2>
+
+<div class="cards">
+ <% @bookings.each do |booking| %>
+  <div class="card-product">
+    <img src="<%= booking.van.image_url %>" />
+    <div class="card-product-infos">
+      <h2><%= booking.date %></h2>
+    </div>
+  </div>
+ <%  end  %>
+</div>
+
+
+<div class="container">
+        <div class="title-card">
+            <h3 id="" class="van-title"><%= link_to "Retour accueil", root_path %></h3>
+        </div>
+      </div>
+
+
+
+<!-- modifs romain -->
+
+
+<!-- @user = current_user
+@vans = current_user.vans
+@bookings = current_user.bookings -->
