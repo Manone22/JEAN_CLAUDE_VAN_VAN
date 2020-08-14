@@ -1,8 +1,6 @@
 <p> Bienvenue sur ton tableau de bord <strong> <%= @user.email %></strong> !</p>
-
    <%= link_to "Rajouter un van", new_van_path %>
 <h2>Tes vans</h2>
-
 
 <div class="cards">
 <% @vans.each do |van| %>
@@ -15,10 +13,8 @@
       <p><%= van.description %> <strong><%= van.price %> €</strong>.</p>
       <%= link_to "Modifier mon van",   edit_van_path(van) %>
     </div>
-  </div>
- <%  end  %>
+  <% end %>
 </div>
-
 
 <h2>Tes réservations</h2>
 
@@ -33,21 +29,11 @@
       <h2><%= booking.end_date %></h2>
     </div>
   </div>
- <%  end  %>
+ <% end %>
 </div>
 
-
 <div class="container">
-        <div class="title-card">
-            <h3 id="" class="van-title"><%= link_to "Retour accueil", root_path %></h3>
-        </div>
-      </div>
-
-
-
-<!-- modifs romain -->
-
-
-<!-- @user = current_user
-@vans = current_user.vans
-@bookings = current_user.bookings -->
+  <div class="title-card">
+      <h3 id="" class="van-title"><%= link_to "Retour accueil", root_path %></h3>
+  </div>
+</div>

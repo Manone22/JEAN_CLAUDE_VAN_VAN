@@ -4,9 +4,9 @@
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
   <div id="van-booking-dates" data-unavailable='<%= @van.unavailable_dates.to_json %>'></div>
-  <div class="form-inputs">
-     <%= f.input :start_date, as: :string, type: :text, input_html: {class: 'flatpickr'} %>
-     <%= f.input :end_date, as: :string, type: :text, input_html: {class: 'flatpickr'} %>
+  <div class="form-fields">
+     <%= f.input :start_date, as: :string, type: :text, input_html: { class: "flatpickr" } %>
+     <%= f.input :end_date, as: :string, type: :text, input_html: { class: "flatpickr" } %>
   </div>
 
   <div class="form-actions">
@@ -14,4 +14,4 @@
   </div>
 <% end %>
 
-<%= link_to 'Retour', vans_path %>
+<%= link_to "Retour", vans_path %>
