@@ -1,7 +1,7 @@
-<p> Bienvenue sur ton tableau de bord <strong> <%= @user.email %></strong> !</p>
-   <%= link_to "Rajouter un van", new_van_path %>
-
-<h2>Tes vans</h2>
+<div class="bienvenue">
+  <h1> Bienvenue sur ton tableau de bord </h1>
+  <h2>Tes vans</h2>
+</div>
 <div class="cards">
 <% @vans.each do |van| %>
   <div class="card-product">
@@ -16,7 +16,15 @@
   <% end %>
 </div>
 
-<h2>Tes réservations</h2>
+
+<div class="container">
+        <div class="title-card ">
+            <h4 id="" class="Add-van"><%= link_to "Rajouter un van", new_van_path %></h4>
+        </div>
+      </div>
+
+<h2 class="text-title">Tes réservations</h2>
+
 <div class="cards">
  <% @bookings.each do |booking| %>
   <div class="card-product">
